@@ -86,6 +86,8 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
 
+**CHECKPOINT**
+
 1. **Bubble Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
    within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
    The method simply calls `bubble(array, 0, hi)` for all valid `hi` values **in reverse order**
