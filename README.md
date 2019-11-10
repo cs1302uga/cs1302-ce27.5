@@ -85,6 +85,8 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
    have the **DRIVER** stage and commit `BubbleSort.java` to their local repository, then
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
+   
+1. View the condensed, graphical version of your Git log using `git adog`.
 
 <hr/>
 
