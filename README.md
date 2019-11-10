@@ -86,6 +86,7 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
 
+<hr/>
 **CHECKPOINT**
 
 1. **Bubble Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
@@ -134,6 +135,7 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
    
 1. View the condensed, graphical version of your Git log using `git adog`.
 
+<hr/>
 **CHECKPOINT**
 
 1. In your notes, write down the source code for `bubble` and `bubbleSort`, then derive the
@@ -148,7 +150,8 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
       only comparison operations (i.e., calls to `c.compare`)? Include the diagram
       for your derivation. As `bubbleSort` calls
       `bubble`, this will involve mathematical function composition.
-      
+
+<hr/>
 **CHECKPOINT**
 
 1. Next time, your group will work on the **Selection Sort Algo** and some other interesting
