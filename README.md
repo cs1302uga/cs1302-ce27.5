@@ -79,7 +79,7 @@ that are **not in order** according to the ordering induced by the comparator (i
       | `0`  | `4`  | `3`      |
       
       | Iteration | Before              | `(a, b)` | `c.compare(a, b) > 0` | Action  | After               |
-      | ----------|---------------------|----------|-----------------------|---------|---------------------|
+      |-----------|---------------------|----------|-----------------------|---------|---------------------|
       | `0`       | `[(2, 3) 1, 4, 5 ]` | `(2, 3)` | `false`               | no swap | `[ 2, 3, 1, 4, 5 ]` |
       | `1`       | `[ 2 (3, 1) 4, 5 ]` | `(2, 1)` | `true`                | do swap | `[ 2, 1, 3, 4, 5 ]` |
       | `2`       | `[ 2, 1 (3, 4) 5 ]` | `(3, 4)` | `false`               | no swap | `[ 2, 1, 3, 4, 5 ]` |
@@ -100,12 +100,31 @@ that are **not in order** according to the ordering induced by the comparator (i
       |------|------|----------|
       | `0`  | `4`  | `3`      |
       
-      | Before              | `(a, b)` | `c.compare(a, b) > 0` | Action  | After               |
-      |---------------------|----------|-----------------------|---------|---------------------|
-      | `[(3, 2) 1, 5, 4 ]` | `(3, 2)` | `true`                | do swap | `[ 2, 3, 1, 5, 4 ]` |
-      | `[ 2 (3, 1) 5, 4 ]` | `(3, 1)` | `true`                | do swap | `[ 2, 1, 3, 5, 4 ]` |
-      | `[ 2, 1 (3, 5) 4 ]` | `(3, 5)` | `false`               | no swap | `[ 2, 1, 3, 5, 4 ]` |
-      | `[ 2, 1, 3 (5, 4)]` | `(5, 4)` | `true`                | do swap | `[ 2, 1, 3, 4, 5 ]` |
+      | Iteration | Before              | `(a, b)` | `c.compare(a, b) > 0` | Action  | After               |
+      |-----------|---------------------|----------|-----------------------|---------|---------------------|
+      | `0`       | `[(3, 2) 1, 5, 4 ]` | `(3, 2)` | `true`                | do swap | `[ 2, 3, 1, 5, 4 ]` |
+      | `1`       | `[ 2 (3, 1) 5, 4 ]` | `(3, 1)` | `true`                | do swap | `[ 2, 1, 3, 5, 4 ]` |
+      | `2`       | `[ 2, 1 (3, 5) 4 ]` | `(3, 5)` | `false`               | no swap | `[ 2, 1, 3, 5, 4 ]` |
+      | `3`       | `[ 2, 1, 3 (5, 4)]` | `(5, 4)` | `true`                | do swap | `[ 2, 1, 3, 4, 5 ]` |
+      
+   1. Here is another example before and after calling `bubble(array, 0, 1, Integer::compareTo)`
+      on an array with elements `[ 2, 1, 3, 4, 5 ]` :
+      
+      ```java
+      System.out.println(Arrays.toString(array)); // [ 2, 1, 3, 4, 5 ]
+      bubble(array, 0, 1, Integer::compareTo);
+      System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
+      ```
+      
+      Here are is an overview of the internal steps taken in this example:
+      
+      | `lo` | `hi` | `hi - 1` |
+      |------|------|----------|
+      | `0`  | `1`  | `0`      |
+      
+      | Iteration | Before              | `(a, b)` | `c.compare(a, b) > 0` | Action  | After               |
+      |-----------|---------------------|----------|-----------------------|---------|---------------------|
+      | `0`       | `[(2, 1) 3, 4, 5 ]` | `(1, 1)` | `true`                | do swap | `[ 1, 2, 3, 4, 5 ]` |
    
 This method gets its name from the idea that a call "bubbles" the bigger values to the right
 of the specified range (i.e., from `lo` to `hi`). After a call to `bubble`, 
