@@ -178,12 +178,12 @@ For this next checkpoint, we will have you implement a simple sorting algorithm 
 explain the execution of this algorithm. We will take the approach of breaking up the
 algorithm into two methods, `selectMin` and `selectionSort` that work together to sort an array.
 
-1. **Select Min Algo:** This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
-   within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
-   The method iterates over the array from `lo` to `hi` (inclusive) and finds the minimum element 
-   according to the ordering induced by the comparator (i.e., calling `c.compare`), then swaps that
-   element with the element as index `lo`. 
-   Here is the signature for the method:
+**Select Min Algo:** This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
+within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
+The method iterates over the array from `lo` to `hi` (inclusive) and finds the minimum element 
+according to the ordering induced by the comparator (i.e., calling `c.compare`), then swaps that
+element with the element as index `lo`. 
+Here is the signature for the method:
    
    ```java
    public static <T> void selectMin(T[] array, int lo, int hi, Comparator<T> c)
@@ -207,9 +207,9 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
       System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
       ```
    
-   This method gets its name from the idea that it repeatedly selects a minimum in the 
-   specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
-   **the smallest value in the range is guaranteed to be at index `lo`.**
+This method gets its name from the idea that it repeatedly selects a minimum in the 
+specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
+**the smallest value in the range is guaranteed to be at index `lo`.**
 
 1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** implement the `selectMin` method
    in `SelectionSort.java`. You may want to implement a static `swap` method to help you perform
