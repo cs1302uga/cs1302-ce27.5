@@ -124,7 +124,7 @@ that are **not in order** according to the ordering induced by the comparator (i
       
       | Iteration | Before              | `(a, b)` | `c.compare(a, b) > 0` | Action  | After               |
       |-----------|---------------------|----------|-----------------------|---------|---------------------|
-      | `0`       | `[(2, 1) 3, 4, 5 ]` | `(1, 1)` | `true`                | do swap | `[ 1, 2, 3, 4, 5 ]` |
+      | `0`       | `[(2, 1) 3, 4, 5 ]` | `(2, 1)` | `true`                | do swap | `[ 1, 2, 3, 4, 5 ]` |
    
 This method gets its name from the idea that a call "bubbles" the bigger values to the right
 of the specified range (i.e., from `lo` to `hi`). After a call to `bubble`, 
