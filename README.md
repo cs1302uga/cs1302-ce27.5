@@ -48,8 +48,8 @@ command depends on your present working directory), then please note that contex
 ## Exercise Steps
 
 For this next checkpoint, we will have you implement a simple sorting algorithm called
-[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort). There are many different ways to
-explain the execution of this algorithm. We will take the approach of breaking up the
+[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort). **There are many different ways to
+explain the execution of this algorithm.** We will take the approach of breaking up the
 algorithm into two methods, `bubble` and `bubbleSort` that work together to sort an array.
 
 **Bubble Algo:** This is a helper algorithm that does not, itself, sort the array. 
@@ -57,7 +57,7 @@ This method takes an array, two valid index positions `lo` and `hi` (both inclus
 within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
 The method iterates over the array from `lo` to `hi - 1` (inclusive) and **swaps adjacent elements**
 that are **not in order** according to the ordering induced by the comparator (i.e., calling 
-`c.compare`. Here is the signature for the method:
+`c.compare`). Here is the signature for the method:
    
    ```java
    public static <T> void bubble(T[] array, int lo, int hi, Comparator<T> c)
@@ -70,6 +70,15 @@ that are **not in order** according to the ordering induced by the comparator (i
       System.out.println(Arrays.toString(array)); // [ 2, 3, 1, 4, 5 ]
       bubble(array, 0, 4, Integer::compareTo);
       System.out.println(Arrays.toString(array)); // [ 2, 1, 3, 4, 5 ]
+      ```
+      
+      Here are is an overview of the internal steps taken in this example:
+      ```
+      lo = 0; hi = 4; hi - 1 = 3;
+      [(2, 3) 1, 4, 5 ]; c.compare(2, 3) returns < 0; no swap; [ 2, 3, 1, 4, 5 ]
+      [ 2 (3, 1) 4, 5 ]; c.compare(2, 1) returns > 0; do swap; [ 2, 1, 3, 4, 5 ]
+      [ 2, 1 (3, 4) 5 ]; c.compare(3, 4) returns < 0; no swap; [ 2, 1, 3, 4, 5 ]
+      [ 2, 1, 3 (4, 5)]; c.compare(4, 5) returns < 0; no swap; [ 2, 1, 3, 4, 5 ]
       ```
       
    1. Here is another example before and after calling `bubble(array, 0, 4, Integer::compareTo)`
