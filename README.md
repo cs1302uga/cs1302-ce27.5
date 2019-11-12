@@ -73,12 +73,17 @@ that are **not in order** according to the ordering induced by the comparator (i
       ```
       
       Here are is an overview of the internal steps taken in this example:
-      ```
-      lo = 0; hi = 4; hi - 1 = 3;
-      [(2, 3) 1, 4, 5 ]; c.compare(2, 3) returns < 0; no swap; [ 2, 3, 1, 4, 5 ]
-      [ 2 (3, 1) 4, 5 ]; c.compare(2, 1) returns > 0; do swap; [ 2, 1, 3, 4, 5 ]
-      [ 2, 1 (3, 4) 5 ]; c.compare(3, 4) returns < 0; no swap; [ 2, 1, 3, 4, 5 ]
-      [ 2, 1, 3 (4, 5)]; c.compare(4, 5) returns < 0; no swap; [ 2, 1, 3, 4, 5 ]
+      
+      | `lo` | `hi` | `hi - 1` |
+      |------|------|----------|
+      | `0`  | `4`  | `3`      |
+      
+      | Before              | `(a, b)` | `c.compare(a, b) > 0` | Action  | After               |
+      |---------------------|----------|-----------------------|---------|---------------------|
+      | `[(2, 3) 1, 4, 5 ]` | `(2, 3)` | `false`               | no swap | `[ 2, 3, 1, 4, 5 ]` |
+      | `[ 2 (3, 1) 4, 5 ]` | `(2, 1)` | `true`                | do swap | `[ 2, 1, 3, 4, 5 ]` |
+      | `[ 2, 1 (3, 4) 5 ]` | `(3, 4)` | `false`               | no swap | `[ 2, 1, 3, 4, 5 ]` |
+      | `[ 2, 1, 3 (4, 5)]` | `(4, 5)` | `false`               | no swap | `[ 2, 1, 3, 4, 5 ]` |
       ```
       
    1. Here is another example before and after calling `bubble(array, 0, 4, Integer::compareTo)`
