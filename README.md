@@ -7,6 +7,13 @@ sorting an array, then derive the timing functions for those algorithms for
 the purposes of completing a set of algorithm analysese at a later time. Code
 and notes will be shared between group members via a private Git repository. 
 
+## Course-Specific Learning Outcomes
+* **LO3.d:** Apply pair-programming principles in a software-based project.
+* **LO5.a:** Utilize a version control tool such as Git or Subversion to store 
+and update source code in a multi-programmer software solution.
+* **LO6.c:** (Partial) Implement, analyze, and assess combinations of searching/sorting 
+algorithms such as linear search, binary search, quadratic sorts, and linearithmic sorts.
+
 ## References and Prerequisites
 
 * [Setting up your own GitHub Account](https://github.com/cs1302uga/cs1302-tutorials/blob/master/github-setup.md)
@@ -24,7 +31,7 @@ command depends on your present working directory), then please note that contex
 ### Getting Started
 
 1. **You need to be in a group with at least two people for this exercise.**
-   We reccommend keeping the groups small. Some steps in this exercise need be
+   We recommend keeping the groups small. Some steps in this exercise need to be
    done by each group member individually.
 
 1. **Be sure that all group members have completed [cs1302-ce27](https://github.com/cs1302uga/cs1302-ce27).**
@@ -66,10 +73,10 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
       ```
       
    1. Here is another example before and after calling `bubble(array, 0, 4, Integer::compareTo)`
-      on an array with elements `[ 3, 2, 1, 4, 5 ]` :
+      on an array with elements `[ 3, 2, 1, 5, 4 ]` :
       
       ```java
-      System.out.println(Arrays.toString(array)); // [ 3, 2, 1, 4, 5 ]
+      System.out.println(Arrays.toString(array)); // [ 3, 2, 1, 5, 4 ]
       bubble(array, 0, 4, Integer::compareTo);
       System.out.println(Arrays.toString(array)); // [ 2, 1, 3, 4, 5 ]
       ```
