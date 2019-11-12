@@ -52,12 +52,12 @@ For this next checkpoint, we will have you implement a simple sorting algorithm 
 explain the execution of this algorithm. We will take the approach of breaking up the
 algorithm into two methods, `bubble` and `bubbleSort` that work together to sort an array.
 
-1. **Bubble Algo:** This is a helper algorithm that does not, itself, sort the array. 
-   This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
-   within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
-   The method iterates over the array from `lo` to `hi - 1` (inclusive) and **swaps adjacent elements**
-   that are **not in order** according to the ordering induced by the comparator (i.e., calling 
-   `c.compare`. Here is the signature for the method:
+**Bubble Algo:** This is a helper algorithm that does not, itself, sort the array. 
+This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
+within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
+The method iterates over the array from `lo` to `hi - 1` (inclusive) and **swaps adjacent elements**
+that are **not in order** according to the ordering induced by the comparator (i.e., calling 
+`c.compare`. Here is the signature for the method:
    
    ```java
    public static <T> void bubble(T[] array, int lo, int hi, Comparator<T> c)
@@ -81,14 +81,17 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
       System.out.println(Arrays.toString(array)); // [ 2, 1, 3, 4, 5 ]
       ```
    
-   This method gets its name from the idea that a call "bubbles" the bigger values to the right
-   of the specified range (i.e., from `lo` to `hi`). After a call to `bubble`, 
-   **the largest value in the range is guaranteed to be at index `hi`.**
+This method gets its name from the idea that a call "bubbles" the bigger values to the right
+of the specified range (i.e., from `lo` to `hi`). After a call to `bubble`, 
+**the largest value in the range is guaranteed to be at index `hi`.**
 
 1. As a group, pick a **DRIVER.**, then the have the **DRIVER** implement the `bubble` method
    in `BubbleSort.java`. You may want to implement a static `swap` method to help you perform
-   the adjacent swaps. Be sure to include some code in the `main` method to test the 
-   implementation. Once your group is confident that the code compiles and runs correctly,
+   the adjacent swaps. 
+   
+1. Write some code in the `main` method to test the implementation of `bubble`. Make sure you
+   test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices.
+   Once your group is confident that the code compiles and runs correctly,
    have the **DRIVER** stage and commit `BubbleSort.java` to their local repository, then
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
@@ -99,25 +102,25 @@ algorithm into two methods, `bubble` and `bubbleSort` that work together to sort
 
 **CHECKPOINT**
 
-1. **Bubble Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
-   within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
-   The method simply calls `bubble(array, 0, hi)` for all valid `hi` values **in reverse order**
-   except for `0`. Here is the signature for the method:
+**Bubble Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
+within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
+The method simply calls `bubble(array, 0, hi)` for all valid `hi` values **in reverse order**
+except for `0`. Here is the signature for the method:
 
    ```java
    public static <T> void bubbleSort(T[] array, int lo, int hi, Comparator<T> c)
    ```
 
-   To sort an entire array of integers referred to by `array`, for example, you might call:
+To sort an entire array of integers referred to by `array`, for example, you might call:
    
    ```java
    bubbleSort(array, 0, array.length - 1, Integer::compareTo);
    ```
    
-   This method gets its name from the fact that uses repeated calls `bubble` in order to sort the array. 
-   Visually, the algorithm works by breaking up the array into two subsequences: unsorted and sorted.
-   Initially, the unsorted sequence is the entire array and the sorted sequence is empty. After each
-   call to `bubble`, we know that the largest value in the range is guaranteed to be at index `hi`.
+This method gets its name from the fact that uses repeated calls `bubble` in order to sort the array. 
+Visually, the algorithm works by breaking up the array into two subsequences: unsorted and sorted.
+Initially, the unsorted sequence is the entire array and the sorted sequence is empty. After each
+call to `bubble`, we know that the largest value in the range is guaranteed to be at index `hi`.
    
    1. Here is a trace of the algorithm, one row for each call to `bubble`:
    
