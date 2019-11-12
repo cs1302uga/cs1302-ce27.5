@@ -140,8 +140,11 @@ call to `bubble`, we know that the largest value in the range is guaranteed to b
       System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
       ```
 1. As a group, pick a _new_ **DRIVER.**, then the have the **DRIVER** implement the `bubbleSort` 
-   method in `BubbleSort.java`. Be sure to include some code in the `main` method to test the 
-   implementation. Once your group is confident that the code compiles and runs correctly,
+   method in `BubbleSort.java`. 
+1. Write some code in the `main` method to test the implementation of `bubbleSort`. You can
+   most likely use your `bubble` tests - just change them to do a full `bubbleSort`. Make sure 
+   you test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices.
+   Once your group is confident that the code compiles and runs correctly,
    have the **DRIVER** stage and commit `BubbleSort.java` to their local repository, then
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
@@ -162,8 +165,8 @@ call to `bubble`, we know that the largest value in the range is guaranteed to b
       
    1. What is `T(n)` for a call to `bubbleSort` if the set of key processing steps includes
       only comparison operations (i.e., calls to `c.compare`)? Include the diagram
-      for your derivation. As `bubbleSort` calls
-      `bubble`, this will involve mathematical function composition.
+      for your derivation. As `bubbleSort` calls `bubble`, this will involve mathematical 
+      function composition.
 
 <hr/>
 
